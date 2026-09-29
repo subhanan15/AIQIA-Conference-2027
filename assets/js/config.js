@@ -18,8 +18,8 @@ window.AIQIA = {
   registerUrl: "#",          // TODO: registration portal link
   brochureUrl: "assets/docs/aiq2027-cfp-brochure.pdf", // TODO: add PDF
   reviewerFormUrl: "#",      // TODO: "Call for reviewers" Google Form
-  email: "TBA",              // TODO: official conference email
-  phone: "TBA",              // TODO
+  email: "saiprashanth@sithyd.siu.edu.in", // Program Chair (replace with an official conference email if one is created)
+  phone: "+91-7093319953",   // Program Chair
   address: "Symbiosis Institute of Technology, Hyderabad Campus, Modallaguda, Nandigama, Rangareddy, Telangana, India", // TODO: verify
 
   socials: {                 // TODO: fill or remove
