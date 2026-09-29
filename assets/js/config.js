@@ -1,12 +1,12 @@
 /* ==========================================================================
-   IEEE AIQ 2027 — Site configuration
+   AIQIA 2027 — Site configuration
    Edit values here; they are used by the header, footer, countdown and
    any element with a matching data-cfg attribute (e.g. <a data-cfg-href="submitUrl">).
    Anything marked TODO is a placeholder waiting for confirmed details.
    ========================================================================== */
-window.AIQ = {
-  shortName: "IEEE AIQ 2027",
-  fullName: "1st International Conference on Artificial Intelligence and Quantum Computing",
+window.AIQIA = {
+  shortName: "AIQIA 2027",
+  fullName: "First International Conference on Artificial Intelligence & Quantum: Innovations and Applications",
   dates: "24–25 September 2027",
   // ISO start time (IST) used by the countdown
   startsAt: "2027-09-24T09:00:00+05:30",

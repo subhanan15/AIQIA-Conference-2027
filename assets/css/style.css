@@ -1,9 +1,19 @@
 /* ==========================================================================
-   IEEE AIQ 2027 — Global stylesheet
-   Visual language modelled on the IEEE ICIP 2026 site (Evenz theme):
-   Open Sans body, Roboto headings, IEEE navy/blue 45° gradients,
+   AIQIA 2027 — Global stylesheet
+   Open Sans body, Roboto headings, navy/blue 45° gradients,
    white sticky menu, pill buttons, portrait speaker cards.
    ========================================================================== */
+
+/* ---------- Self-hosted fonts (no Google Fonts dependency) ---------- */
+@font-face { font-family: "Material Icons"; font-style: normal; font-weight: 400; font-display: block; src: url(../fonts/material-icons.woff2) format("woff2"); }
+@font-face { font-family: "Roboto"; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/roboto-400.woff2) format("woff2"); }
+@font-face { font-family: "Roboto"; font-style: italic; font-weight: 400; font-display: swap; src: url(../fonts/roboto-400-italic.woff2) format("woff2"); }
+@font-face { font-family: "Roboto"; font-style: normal; font-weight: 500; font-display: swap; src: url(../fonts/roboto-500.woff2) format("woff2"); }
+@font-face { font-family: "Roboto"; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/roboto-700.woff2) format("woff2"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/open-sans-400.woff2) format("woff2"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: 400; font-display: swap; src: url(../fonts/open-sans-400-italic.woff2) format("woff2"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url(../fonts/open-sans-600.woff2) format("woff2"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/open-sans-700.woff2) format("woff2"); }
 
 :root {
   --navy: #002855;
@@ -62,7 +72,14 @@ h3 { font-size: 1.35rem; }
 h4 { font-size: 1.1rem; }
 p { margin: 0 0 1.1em; }
 ul { padding-left: 1.2em; }
-.material-icons { vertical-align: middle; line-height: 1; }
+.material-icons {
+  font-family: "Material Icons"; font-weight: normal; font-style: normal; font-size: 24px;
+  display: inline-block; line-height: 1; vertical-align: middle; text-transform: none; letter-spacing: normal;
+  word-wrap: normal; white-space: nowrap; direction: ltr; font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  /* If the icon font ever fails to load, clip the ligature name instead of showing it */
+  width: 1em; height: 1em; overflow: hidden; flex-shrink: 0;
+}
 :focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
 
 .skip-link {
@@ -97,7 +114,7 @@ ul { padding-left: 1.2em; }
 .btn-outline:hover { background: var(--blue); color: #fff; }
 .btn-sm { padding: 10px 20px; font-size: 12px; }
 
-/* ---------- IEEE meta bar ---------- */
+/* ---------- Top meta bar ---------- */
 .meta-bar { background: var(--navy); color: rgba(255, 255, 255, .85); font-size: 12px; }
 .meta-bar .container { display: flex; justify-content: space-between; align-items: center; height: 34px; gap: 16px; }
 .meta-bar a { color: rgba(255, 255, 255, .85); margin-right: 18px; }
@@ -105,6 +122,25 @@ ul { padding-left: 1.2em; }
 .meta-bar .meta-right { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .meta-bar .meta-right a { margin: 0 0 0 14px; color: var(--gold); font-weight: 600; }
 @media (max-width: 720px) { .meta-bar .meta-links a:nth-child(n+3) { display: none; } .meta-bar .meta-right { display: none; } }
+
+/* ---------- Logo bar (conference + society + host logos) ---------- */
+.logo-bar { background: var(--paper); border-bottom: 1px solid var(--line); }
+.logo-bar .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 14px; padding-bottom: 14px; max-width: 1560px; }
+.logo-bar-main { display: flex; align-items: center; gap: 18px; min-width: 0; }
+.logo-bar-main img { height: 96px; width: auto; flex-shrink: 0; }
+.logo-bar-main .brand-text strong { font-size: 22px; }
+.logo-bar-main .brand-text span { display: block; margin-top: 4px; font-size: 13px; text-transform: none; letter-spacing: 0; color: var(--heading); }
+.logo-bar-main .brand-text em { display: block; margin-top: 4px; font-size: 12px; font-style: normal; color: var(--muted); }
+.logo-bar-partners { display: flex; align-items: center; gap: 28px; flex-shrink: 0; }
+.logo-bar-partners img { width: auto; }
+/* Desktop: the nav-row brand only appears once the logo bar has scrolled away.
+   Mobile: the logo bar is hidden and the nav-row brand carries the logo. */
+@media (min-width: 861px) {
+  .site-header .brand { opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; }
+  .site-header.stuck .brand { opacity: 1; visibility: visible; }
+}
+@media (max-width: 860px) { .logo-bar { display: none; } }
+@media (max-width: 420px) { .site-header .brand-text strong { font-size: 17px; } .site-header .brand img { height: 42px; } }
 
 /* ---------- Header / navigation ---------- */
 .site-header {
@@ -116,10 +152,10 @@ ul { padding-left: 1.2em; }
 .site-header.scrolled { box-shadow: 0 6px 24px -12px rgba(0, 0, 0, .25); }
 .site-header .container { display: flex; align-items: center; height: var(--header-h); gap: 20px; max-width: 1560px; }
 
-.brand { display: flex; align-items: center; gap: 12px; color: var(--heading); flex-shrink: 0; }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--heading); flex-shrink: 1; min-width: 0; }
 .brand img { height: 50px; width: auto; }
 .brand-text { font-family: var(--ff-head); line-height: 1.1; }
-.brand-text strong { display: block; font-size: 20px; font-weight: 700; color: var(--navy); letter-spacing: .01em; }
+.brand-text strong { display: block; white-space: nowrap; font-size: 20px; font-weight: 700; color: var(--navy); letter-spacing: .01em; }
 .brand-text span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
 
 .main-nav { margin-left: auto; }
@@ -156,7 +192,7 @@ ul { padding-left: 1.2em; }
 .dropdown a:hover, .dropdown a.active { color: var(--blue); background: #f2f7fb; }
 
 .header-cta { margin-left: 8px; }
-.nav-toggle {
+.nav-toggle { flex-shrink: 0;
   display: none; margin-left: auto; background: none; border: 0; cursor: pointer;
   width: 44px; height: 44px; border-radius: 50%; color: var(--navy);
 }
@@ -442,7 +478,19 @@ table.data tr:nth-child(even) td { background: #f8fafc; }
   filter: grayscale(1); opacity: .85; transition: filter .3s, opacity .3s;
 }
 .logo-slot:hover { filter: none; opacity: 1; }
-.logo-slot img { max-height: 64px; width: auto; }
+.logo-strip.single { grid-template-columns: minmax(0, 320px); justify-content: center; }
+.logo-strip.single .logo-slot { height: 160px; filter: none; opacity: 1; }
+.logo-strip.single .logo-slot img { max-height: 120px; }
+.logo-slot img { max-height: 64px; max-width: 100%; width: auto; }
+
+/* Host-institution logo panel (home page) */
+.host-logo-panel {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+  aspect-ratio: 4 / 3; background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow-1); padding: 32px; text-align: center;
+}
+.host-logo-panel img { max-height: 60%; width: auto; }
+.host-logo-panel p { margin: 0; font-family: var(--ff-head); font-size: 1.15rem; color: #c1272d; letter-spacing: .02em; }
+.host-logo-panel small { display: block; color: var(--muted); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
 
 /* Pricing / tiers */
 .tier { text-align: center; }

@@ -1,11 +1,11 @@
 /* ==========================================================================
-   IEEE AIQ 2027 — Shared layout + interactions
+   AIQIA 2027 — Shared layout + interactions
    The header, navigation and footer are defined ONCE here and injected into
    #site-header / #site-footer on every page. Edit NAV to change the menu.
    ========================================================================== */
 (function () {
   "use strict";
-  const C = window.AIQ || {};
+  const C = window.AIQIA || {};
 
   /* ---------- Navigation (single source of truth) ---------- */
   const NAV = [
@@ -24,8 +24,6 @@
     { label: "Important Dates", href: "important-dates.html", id: "important-dates" },
     {
       label: "Program", id: "program", cols: 2, children: [
-        { label: "Keynotes", href: "keynotes.html", id: "keynotes" },
-        { label: "Speakers", href: "speakers.html", id: "speakers" },
         { label: "Program Overview", href: "programs.html", id: "programs" },
         { label: "Workshops", href: "programs.html#workshops" },
         { label: "Tutorials", href: "programs.html#tutorials" },
@@ -83,18 +81,24 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="meta-bar"><div class="container">
     <div class="meta-links">
-      <a href="https://www.ieee.org/" target="_blank" rel="noopener">IEEE.org</a>
-      <a href="https://ieeexplore.ieee.org/" target="_blank" rel="noopener">IEEE Xplore</a>
-      <a href="https://standards.ieee.org/" target="_blank" rel="noopener">IEEE Standards</a>
-      <a href="https://spectrum.ieee.org/" target="_blank" rel="noopener">IEEE Spectrum</a>
-      <a href="https://www.ieee.org/sitemap.html" target="_blank" rel="noopener">More Sites</a>
+      <a href="https://sithyd.edu.in/" target="_blank" rel="noopener">SIT Hyderabad</a>
+      <a href="https://www.siu.edu.in/" target="_blank" rel="noopener">Symbiosis International University</a>
     </div>
     <div class="meta-right">${C.dates} &nbsp;|&nbsp; ${C.format}<a href="${C.submitUrl}" target="_blank" rel="noopener">Submit Paper →</a></div>
   </div></div>
+  <div class="logo-bar"><div class="container">
+    <a class="logo-bar-main" href="index.html" aria-label="${C.shortName} home">
+      <img src="assets/img/logos/aiqia-logo.png" alt="AIQIA 2027 logo" width="520" height="384">
+      <span class="brand-text"><strong>${C.shortName}</strong><span>${C.fullName}</span><em>${C.dates} · ${C.venue}</em></span>
+    </a>
+    <div class="logo-bar-partners">
+      <a href="https://sithyd.edu.in/" target="_blank" rel="noopener"><img src="assets/img/logos/symbiosis.png" alt="Symbiosis Institute of Technology, Hyderabad" height="72"></a>
+    </div>
+  </div></div>
   <header class="site-header" id="top-header"><div class="container">
     <a class="brand" href="index.html" aria-label="${C.shortName} home">
-      <img src="assets/img/logos/aiq-logo.svg" alt="" width="50" height="50">
-      <span class="brand-text"><strong>${C.shortName}</strong><span>AI &amp; Quantum Computing</span></span>
+      <img src="assets/img/logos/aiqia-logo.png" alt="" width="70" height="50">
+      <span class="brand-text"><strong>${C.shortName}</strong><span>AI &amp; Quantum</span></span>
     </a>
     <nav class="main-nav" aria-label="Main"><ul>${desktopNav}</ul></nav>
     <a class="btn btn-primary btn-sm header-cta" href="${C.submitUrl}" target="_blank" rel="noopener">${icon("upload_file")}Submit Paper</a>
@@ -103,7 +107,7 @@
   <div class="mobile-nav" aria-hidden="true">
     <div class="panel" role="dialog" aria-label="Menu">
       <div class="panel-head">
-        <a class="brand" href="index.html"><img src="assets/img/logos/aiq-logo.svg" alt="" width="40" height="40"><span class="brand-text"><strong>${C.shortName}</strong></span></a>
+        <a class="brand" href="index.html"><img src="assets/img/logos/aiqia-logo.png" alt="" width="56" height="40"><span class="brand-text"><strong>${C.shortName}</strong></span></a>
         <button class="nav-toggle" style="display:inline-flex" aria-label="Close menu">${icon("close")}</button>
       </div>
       <ul>${mobileNav}</ul>
@@ -120,7 +124,7 @@
       <div class="f-brand">
         <strong>${C.shortName}</strong>
         <p>${C.fullName}. ${C.dates} · ${C.venue}.</p>
-        <p class="muted" style="color:rgba(255,255,255,.55);font-size:13px">Technically co-sponsored by IEEE TEMS <em>(TODO: confirm sponsorship &amp; IEEE conference record #)</em></p>
+        <p class="muted" style="color:rgba(255,255,255,.55);font-size:13px">Organised by Symbiosis Institute of Technology, Hyderabad</p>
         <div class="socials">
           <a href="${s.linkedin}" aria-label="LinkedIn">in</a>
           <a href="${s.x}" aria-label="X">X</a>
@@ -152,13 +156,10 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="sitemap.html">Sitemap</a></li>
-        <li><a href="https://www.ieee.org/accessibility-statement.html" target="_blank" rel="noopener">Accessibility</a></li>
-        <li><a href="https://www.ieee.org/about/corporate/governance/p9-26.html" target="_blank" rel="noopener">Nondiscrimination Policy</a></li>
-        <li><a href="https://secure.ethicspoint.com/domain/media/en/gui/20410/index.html" target="_blank" rel="noopener">IEEE Ethics Reporting</a></li>
-        <li><a href="https://www.ieee.org/security-privacy.html" target="_blank" rel="noopener">IEEE Privacy Policy</a></li>
-        <li><a href="https://www.ieee.org/about/help/site-terms-conditions.html" target="_blank" rel="noopener">Terms</a></li>
+        <li><a href="contact-us.html">Contact</a></li>
+        <li><a href="https://sithyd.edu.in/" target="_blank" rel="noopener">SIT Hyderabad</a></li>
       </ul>
-      <p>© Copyright ${new Date().getFullYear()} IEEE – All rights reserved. Use of this website signifies your agreement to the IEEE Terms and Conditions. A public charity, IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.</p>
+      <p>© ${new Date().getFullYear()} ${C.shortName} · Symbiosis Institute of Technology, Hyderabad. All rights reserved.</p>
     </div></div>
   </footer>
   <button class="to-top" aria-label="Back to top">${icon("arrow_upward")}</button>`;
@@ -178,6 +179,7 @@
   const onScroll = () => {
     const y = window.scrollY;
     header && header.classList.toggle("scrolled", y > 10);
+    header && header.classList.toggle("stuck", header.getBoundingClientRect().top <= 0 && y > 10);
     toTop && toTop.classList.toggle("show", y > 500);
   };
   window.addEventListener("scroll", onScroll, { passive: true });
