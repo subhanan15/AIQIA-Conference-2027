@@ -1,11 +1,11 @@
 /* ==========================================================================
-   IEEE TEMS AIQiA 2027 — Shared layout + interactions
+   IEEE TEMS AIQIA 2027 — Shared layout + interactions
    The header, navigation and footer are defined ONCE here and injected into
    #site-header / #site-footer on every page. Edit NAV to change the menu.
    ========================================================================== */
 (function () {
   "use strict";
-  const C = window.AIQ || {};
+  const C = window.AIQIA || {};
 
   /* ---------- Navigation (single source of truth) ---------- */
   const NAV = [
@@ -91,7 +91,7 @@
   </div></div>
   <div class="logo-bar"><div class="container">
     <a class="logo-bar-main" href="index.html" aria-label="${C.shortName} home">
-      <img src="assets/img/logos/aiqia-logo.png" alt="AIQiA 2027 logo" width="520" height="384">
+      <img src="assets/img/logos/aiqia-logo.png" alt="AIQIA 2027 logo" width="520" height="384">
       <span class="brand-text"><strong>${C.shortName}</strong><span>${C.fullName}</span><em>${C.dates} · ${C.venue}</em></span>
     </a>
     <div class="logo-bar-partners">

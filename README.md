@@ -1,6 +1,6 @@
-# IEEE TEMS AIQiA 2027 — Conference Website
+# IEEE TEMS AIQIA 2027 — Conference Website
 
-Website for the **First International Conference on Artificial Intelligence & Quantum: Innovations and Applications (IEEE TEMS AIQiA 2027)**,
+Website for the **First International Conference on Artificial Intelligence & Quantum: Innovations and Applications (IEEE TEMS AIQIA 2027)**,
 24–25 September 2027, Symbiosis Institute of Technology (SIT), Hyderabad — a hybrid conference.
 
 - **Scope / page structure** follows [IEEE TEMSMET 2026](https://temsmet2026.sithyd.edu.in/).
@@ -27,10 +27,11 @@ Plain static HTML/CSS/JS — no build step, no framework.
 ├── coming-soon.html / sitemap.html / 404.html
 ├── assets/
 │   ├── css/style.css            All styles (design tokens at the top in :root)
+│   ├── fonts/                   Self-hosted Roboto, Open Sans, Material Icons (no Google Fonts needed)
 │   ├── js/config.js             ← Conference facts & links (dates, CMT link, email…)
 │   ├── js/main.js               Header/nav/footer (defined once), countdown, accordion, animations
-│   ├── img/logos/               AIQiA, IEEE, IEEE TEMS, IEEE Hyderabad Section, Symbiosis logos
-│   ├── img/favicon.png          Browser-tab icon (from the AIQiA logo)
+│   ├── img/logos/               AIQIA, IEEE, IEEE TEMS, IEEE Hyderabad Section, Symbiosis logos
+│   ├── img/favicon.png          Browser-tab icon (from the AIQIA logo)
 │   ├── img/patterns/            Decorative SVG backgrounds
 │   ├── img/hero|committee|sponsors|venue/   Photo folders
 │   └── docs/                    CFP brochure PDF
