@@ -400,6 +400,41 @@ ul { padding-left: 1.2em; }
 
 /* Committee */
 .committee-group { margin-bottom: 56px; }
+.committee-group { scroll-margin-top: calc(var(--header-h) + 24px); }
+.committee-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 48px; }
+.committee-nav a {
+  padding: 7px 14px; border-radius: 999px; background: var(--paper); box-shadow: var(--shadow-1);
+  font-family: var(--ff-head); font-size: 13px; color: var(--navy);
+}
+.committee-nav a:hover { background: var(--navy); color: #fff; }
+.cm-sub { margin: 28px 0 14px; font-size: 1rem; color: var(--navy); font-family: var(--ff-head); }
+.cm-sub small { color: var(--muted); font-weight: 400; }
+.cm-grid { display: grid; gap: 16px; }
+.cm-grid-lead { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+.cm-grid-chair { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.cm-grid-list { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; }
+.cm-grid-track { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+.cm { background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow-1); }
+.cm h4 { margin: 0; color: var(--navy); }
+.cm .role { font-family: var(--ff-head); font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
+.cm .aff { color: var(--muted); }
+.cm-lead { padding: 26px 24px; text-align: center; border-top: 4px solid transparent; border-image: var(--grad) 1; }
+.cm-lead h4 { font-size: 1.2rem; }
+.cm-lead .role { margin: 6px 0 8px; }
+.cm-lead .aff { font-size: 14px; }
+.cm-chair { padding: 20px 22px; border-left: 4px solid var(--blue); }
+.cm-chair h4 { font-size: 1.05rem; }
+.cm-chair .role { margin: 4px 0 6px; }
+.cm-chair .aff { font-size: 13.5px; }
+.cm-list { padding: 12px 14px; border-left: 3px solid var(--cyan); box-shadow: none; border: 1px solid var(--line); border-left: 3px solid var(--cyan); }
+.cm-list h4 { font-size: .92rem; font-weight: 600; }
+.cm-list .role { font-size: 11px; margin-top: 2px; }
+.cm-list .aff { font-size: 12.5px; margin-top: 2px; line-height: 1.35; }
+.cm-track { padding: 22px 24px; border-top: 4px solid var(--blue); }
+.cm-track h4 { font-size: 1rem; line-height: 1.35; margin-bottom: 12px; }
+.cm-track ul { list-style: none; margin: 0; padding: 0; }
+.cm-track li { font-size: 14px; color: var(--text); padding: 6px 0; border-top: 1px solid var(--line); }
+.cm-track li .role { display: block; font-size: 11px; margin-bottom: 1px; }
 .committee-group > h3 { color: var(--navy); border-left: 4px solid var(--blue); padding-left: 14px; margin-bottom: 22px; }
 .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
 .person { background: var(--paper); border-radius: var(--radius); padding: 24px 20px; text-align: center; box-shadow: var(--shadow-1); }
