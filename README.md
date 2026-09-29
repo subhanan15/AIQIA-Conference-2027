@@ -1,10 +1,10 @@
-# IEEE AIQ 2027 — Conference Website
+# IEEE TEMS AIQiA 2027 — Conference Website
 
-Website for the **1st International Conference on Artificial Intelligence and Quantum Computing (IEEE AIQ 2027)**,
+Website for the **First International Conference on Artificial Intelligence & Quantum: Innovations and Applications (IEEE TEMS AIQiA 2027)**,
 24–25 September 2027, Symbiosis Institute of Technology (SIT), Hyderabad — a hybrid conference.
 
 - **Scope / page structure** follows [IEEE TEMSMET 2026](https://temsmet2026.sithyd.edu.in/).
-- **Visual design** follows [IEEE ICIP 2026](https://2026.ieeeicip.org/): Open Sans + Roboto, IEEE navy `#002855` / blue `#00629B` gradients, white sticky menu, pill buttons, portrait speaker cards.
+- **Visual design** follows [IEEE ICIP 2026](https://2026.ieeeicip.org/): Open Sans + Roboto, IEEE navy `#002855` / blue `#00629B` gradients, white sticky menu, pill buttons.
 
 Plain static HTML/CSS/JS — no build step, no framework.
 
@@ -19,7 +19,6 @@ Plain static HTML/CSS/JS — no build step, no framework.
 ├── review-manuscripts.html
 ├── camera-ready.html
 ├── important-dates.html         Timeline
-├── keynotes.html / speakers.html
 ├── programs.html                Workshops, tutorials, forums… (#anchors) + schedule
 ├── registration.html            Fee table
 ├── venue.html / hotels.html / places.html / visa.html / visa-request.html
@@ -30,9 +29,10 @@ Plain static HTML/CSS/JS — no build step, no framework.
 │   ├── css/style.css            All styles (design tokens at the top in :root)
 │   ├── js/config.js             ← Conference facts & links (dates, CMT link, email…)
 │   ├── js/main.js               Header/nav/footer (defined once), countdown, accordion, animations
-│   ├── img/logos/               Site logo (aiq-logo.svg is a placeholder mark)
+│   ├── img/logos/               AIQiA, IEEE, IEEE TEMS, IEEE Hyderabad Section, Symbiosis logos
+│   ├── img/favicon.png          Browser-tab icon (from the AIQiA logo)
 │   ├── img/patterns/            Decorative SVG backgrounds
-│   ├── img/hero|speakers|committee|sponsors|venue/   Photo folders
+│   ├── img/hero|committee|sponsors|venue/   Photo folders
 │   └── docs/                    CFP brochure PDF
 ├── .htaccess                    Clean URLs (/committee → committee.html), custom 404
 └── .cpanel.yml                  cPanel deployment
@@ -50,8 +50,6 @@ Plain static HTML/CSS/JS — no build step, no framework.
 Search the repo for `TODO` and `TBA` to find every placeholder that still needs real content.
 
 ### Adding images
-- **Speaker:** put `assets/img/speakers/jane-doe.jpg` (portrait, ~370×450) and replace
-  `<div class="avatar">…</div>` with `<img src="assets/img/speakers/jane-doe.jpg" alt="Jane Doe">`.
 - **Committee:** square photo in `assets/img/committee/`, replace the `<span class="material-icons">person</span>` inside `.pic` with an `<img>`.
 - **Placeholders** (`<div class="ph …">`): replace the whole div with an `<img>`.
 - **Hero photo:** add `assets/img/hero/hero.jpg` and uncomment the photo rule under `.hero` in `style.css`.

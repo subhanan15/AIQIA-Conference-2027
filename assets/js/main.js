@@ -1,5 +1,5 @@
 /* ==========================================================================
-   IEEE AIQ 2027 — Shared layout + interactions
+   IEEE TEMS AIQiA 2027 — Shared layout + interactions
    The header, navigation and footer are defined ONCE here and injected into
    #site-header / #site-footer on every page. Edit NAV to change the menu.
    ========================================================================== */
@@ -24,8 +24,6 @@
     { label: "Important Dates", href: "important-dates.html", id: "important-dates" },
     {
       label: "Program", id: "program", cols: 2, children: [
-        { label: "Keynotes", href: "keynotes.html", id: "keynotes" },
-        { label: "Speakers", href: "speakers.html", id: "speakers" },
         { label: "Program Overview", href: "programs.html", id: "programs" },
         { label: "Workshops", href: "programs.html#workshops" },
         { label: "Tutorials", href: "programs.html#tutorials" },
@@ -91,10 +89,21 @@
     </div>
     <div class="meta-right">${C.dates} &nbsp;|&nbsp; ${C.format}<a href="${C.submitUrl}" target="_blank" rel="noopener">Submit Paper →</a></div>
   </div></div>
+  <div class="logo-bar"><div class="container">
+    <a class="logo-bar-main" href="index.html" aria-label="${C.shortName} home">
+      <img src="assets/img/logos/aiqia-logo.png" alt="AIQiA 2027 logo" width="520" height="373">
+      <span class="brand-text"><strong>${C.shortName}</strong><span>${C.fullName}</span><em>${C.dates} · ${C.venue}</em></span>
+    </a>
+    <div class="logo-bar-partners">
+      <a href="https://www.ieee.org/" target="_blank" rel="noopener"><img src="assets/img/logos/ieee.png" alt="IEEE" height="40"></a>
+      <a href="https://www.ieee-tems.org/" target="_blank" rel="noopener"><img src="assets/img/logos/ieee-tems.png" alt="IEEE Technology and Engineering Management Society" height="56"></a>
+      <a href="https://sithyd.edu.in/" target="_blank" rel="noopener"><img src="assets/img/logos/symbiosis.png" alt="Symbiosis Institute of Technology, Hyderabad" height="72"></a>
+    </div>
+  </div></div>
   <header class="site-header" id="top-header"><div class="container">
     <a class="brand" href="index.html" aria-label="${C.shortName} home">
-      <img src="assets/img/logos/aiq-logo.svg" alt="" width="50" height="50">
-      <span class="brand-text"><strong>${C.shortName}</strong><span>AI &amp; Quantum Computing</span></span>
+      <img src="assets/img/logos/aiqia-logo.png" alt="" width="70" height="50">
+      <span class="brand-text"><strong>${C.shortName}</strong><span>AI &amp; Quantum</span></span>
     </a>
     <nav class="main-nav" aria-label="Main"><ul>${desktopNav}</ul></nav>
     <a class="btn btn-primary btn-sm header-cta" href="${C.submitUrl}" target="_blank" rel="noopener">${icon("upload_file")}Submit Paper</a>
@@ -103,7 +112,7 @@
   <div class="mobile-nav" aria-hidden="true">
     <div class="panel" role="dialog" aria-label="Menu">
       <div class="panel-head">
-        <a class="brand" href="index.html"><img src="assets/img/logos/aiq-logo.svg" alt="" width="40" height="40"><span class="brand-text"><strong>${C.shortName}</strong></span></a>
+        <a class="brand" href="index.html"><img src="assets/img/logos/aiqia-logo.png" alt="" width="56" height="40"><span class="brand-text"><strong>${C.shortName}</strong></span></a>
         <button class="nav-toggle" style="display:inline-flex" aria-label="Close menu">${icon("close")}</button>
       </div>
       <ul>${mobileNav}</ul>
@@ -178,6 +187,7 @@
   const onScroll = () => {
     const y = window.scrollY;
     header && header.classList.toggle("scrolled", y > 10);
+    header && header.classList.toggle("stuck", header.getBoundingClientRect().top <= 0 && y > 10);
     toTop && toTop.classList.toggle("show", y > 500);
   };
   window.addEventListener("scroll", onScroll, { passive: true });

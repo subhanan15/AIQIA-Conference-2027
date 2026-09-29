@@ -1,5 +1,5 @@
 /* ==========================================================================
-   IEEE AIQ 2027 — Global stylesheet
+   IEEE TEMS AIQiA 2027 — Global stylesheet
    Visual language modelled on the IEEE ICIP 2026 site (Evenz theme):
    Open Sans body, Roboto headings, IEEE navy/blue 45° gradients,
    white sticky menu, pill buttons, portrait speaker cards.
@@ -106,6 +106,26 @@ ul { padding-left: 1.2em; }
 .meta-bar .meta-right a { margin: 0 0 0 14px; color: var(--gold); font-weight: 600; }
 @media (max-width: 720px) { .meta-bar .meta-links a:nth-child(n+3) { display: none; } .meta-bar .meta-right { display: none; } }
 
+/* ---------- Logo bar (conference + society + host logos) ---------- */
+.logo-bar { background: var(--paper); border-bottom: 1px solid var(--line); }
+.logo-bar .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 14px; padding-bottom: 14px; max-width: 1560px; }
+.logo-bar-main { display: flex; align-items: center; gap: 18px; min-width: 0; }
+.logo-bar-main img { height: 96px; width: auto; flex-shrink: 0; }
+.logo-bar-main .brand-text strong { font-size: 22px; }
+.logo-bar-main .brand-text span { display: block; margin-top: 4px; font-size: 13px; text-transform: none; letter-spacing: 0; color: var(--heading); }
+.logo-bar-main .brand-text em { display: block; margin-top: 4px; font-size: 12px; font-style: normal; color: var(--muted); }
+.logo-bar-partners { display: flex; align-items: center; gap: 28px; flex-shrink: 0; }
+.logo-bar-partners img { width: auto; }
+@media (max-width: 1100px) { .logo-bar-partners img[alt="IEEE"] { display: none; } }
+/* Desktop: the nav-row brand only appears once the logo bar has scrolled away.
+   Mobile: the logo bar is hidden and the nav-row brand carries the logo. */
+@media (min-width: 861px) {
+  .site-header .brand { opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; }
+  .site-header.stuck .brand { opacity: 1; visibility: visible; }
+}
+@media (max-width: 860px) { .logo-bar { display: none; } }
+@media (max-width: 420px) { .site-header .brand-text strong { font-size: 17px; } .site-header .brand img { height: 42px; } }
+
 /* ---------- Header / navigation ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 100;
@@ -116,10 +136,10 @@ ul { padding-left: 1.2em; }
 .site-header.scrolled { box-shadow: 0 6px 24px -12px rgba(0, 0, 0, .25); }
 .site-header .container { display: flex; align-items: center; height: var(--header-h); gap: 20px; max-width: 1560px; }
 
-.brand { display: flex; align-items: center; gap: 12px; color: var(--heading); flex-shrink: 0; }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--heading); flex-shrink: 1; min-width: 0; }
 .brand img { height: 50px; width: auto; }
 .brand-text { font-family: var(--ff-head); line-height: 1.1; }
-.brand-text strong { display: block; font-size: 20px; font-weight: 700; color: var(--navy); letter-spacing: .01em; }
+.brand-text strong { display: block; white-space: nowrap; font-size: 20px; font-weight: 700; color: var(--navy); letter-spacing: .01em; }
 .brand-text span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
 
 .main-nav { margin-left: auto; }
@@ -156,7 +176,7 @@ ul { padding-left: 1.2em; }
 .dropdown a:hover, .dropdown a.active { color: var(--blue); background: #f2f7fb; }
 
 .header-cta { margin-left: 8px; }
-.nav-toggle {
+.nav-toggle { flex-shrink: 0;
   display: none; margin-left: auto; background: none; border: 0; cursor: pointer;
   width: 44px; height: 44px; border-radius: 50%; color: var(--navy);
 }
@@ -442,7 +462,7 @@ table.data tr:nth-child(even) td { background: #f8fafc; }
   filter: grayscale(1); opacity: .85; transition: filter .3s, opacity .3s;
 }
 .logo-slot:hover { filter: none; opacity: 1; }
-.logo-slot img { max-height: 64px; width: auto; }
+.logo-slot img { max-height: 64px; max-width: 100%; width: auto; }
 
 /* Pricing / tiers */
 .tier { text-align: center; }
