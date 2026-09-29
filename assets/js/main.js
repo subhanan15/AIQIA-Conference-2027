@@ -91,7 +91,7 @@
   </div></div>
   <div class="logo-bar"><div class="container">
     <a class="logo-bar-main" href="index.html" aria-label="${C.shortName} home">
-      <img src="assets/img/logos/aiqia-logo.png" alt="AIQiA 2027 logo" width="520" height="373">
+      <img src="assets/img/logos/aiqia-logo.png" alt="AIQiA 2027 logo" width="520" height="384">
       <span class="brand-text"><strong>${C.shortName}</strong><span>${C.fullName}</span><em>${C.dates} · ${C.venue}</em></span>
     </a>
     <div class="logo-bar-partners">
