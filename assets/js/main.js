@@ -1,5 +1,5 @@
 /* ==========================================================================
-   IEEE TEMS AIQIA 2027 — Shared layout + interactions
+   AIQIA 2027 — Shared layout + interactions
    The header, navigation and footer are defined ONCE here and injected into
    #site-header / #site-footer on every page. Edit NAV to change the menu.
    ========================================================================== */
@@ -81,11 +81,8 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="meta-bar"><div class="container">
     <div class="meta-links">
-      <a href="https://www.ieee.org/" target="_blank" rel="noopener">IEEE.org</a>
-      <a href="https://ieeexplore.ieee.org/" target="_blank" rel="noopener">IEEE Xplore</a>
-      <a href="https://standards.ieee.org/" target="_blank" rel="noopener">IEEE Standards</a>
-      <a href="https://spectrum.ieee.org/" target="_blank" rel="noopener">IEEE Spectrum</a>
-      <a href="https://www.ieee.org/sitemap.html" target="_blank" rel="noopener">More Sites</a>
+      <a href="https://sithyd.edu.in/" target="_blank" rel="noopener">SIT Hyderabad</a>
+      <a href="https://www.siu.edu.in/" target="_blank" rel="noopener">Symbiosis International University</a>
     </div>
     <div class="meta-right">${C.dates} &nbsp;|&nbsp; ${C.format}<a href="${C.submitUrl}" target="_blank" rel="noopener">Submit Paper →</a></div>
   </div></div>
@@ -95,8 +92,6 @@
       <span class="brand-text"><strong>${C.shortName}</strong><span>${C.fullName}</span><em>${C.dates} · ${C.venue}</em></span>
     </a>
     <div class="logo-bar-partners">
-      <a href="https://www.ieee.org/" target="_blank" rel="noopener"><img src="assets/img/logos/ieee.png" alt="IEEE" height="40"></a>
-      <a href="https://www.ieee-tems.org/" target="_blank" rel="noopener"><img src="assets/img/logos/ieee-tems.png" alt="IEEE Technology and Engineering Management Society" height="56"></a>
       <a href="https://sithyd.edu.in/" target="_blank" rel="noopener"><img src="assets/img/logos/symbiosis.png" alt="Symbiosis Institute of Technology, Hyderabad" height="72"></a>
     </div>
   </div></div>
@@ -129,7 +124,7 @@
       <div class="f-brand">
         <strong>${C.shortName}</strong>
         <p>${C.fullName}. ${C.dates} · ${C.venue}.</p>
-        <p class="muted" style="color:rgba(255,255,255,.55);font-size:13px">Technically co-sponsored by IEEE TEMS <em>(TODO: confirm sponsorship &amp; IEEE conference record #)</em></p>
+        <p class="muted" style="color:rgba(255,255,255,.55);font-size:13px">Organised by Symbiosis Institute of Technology, Hyderabad</p>
         <div class="socials">
           <a href="${s.linkedin}" aria-label="LinkedIn">in</a>
           <a href="${s.x}" aria-label="X">X</a>
@@ -161,13 +156,10 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="sitemap.html">Sitemap</a></li>
-        <li><a href="https://www.ieee.org/accessibility-statement.html" target="_blank" rel="noopener">Accessibility</a></li>
-        <li><a href="https://www.ieee.org/about/corporate/governance/p9-26.html" target="_blank" rel="noopener">Nondiscrimination Policy</a></li>
-        <li><a href="https://secure.ethicspoint.com/domain/media/en/gui/20410/index.html" target="_blank" rel="noopener">IEEE Ethics Reporting</a></li>
-        <li><a href="https://www.ieee.org/security-privacy.html" target="_blank" rel="noopener">IEEE Privacy Policy</a></li>
-        <li><a href="https://www.ieee.org/about/help/site-terms-conditions.html" target="_blank" rel="noopener">Terms</a></li>
+        <li><a href="contact-us.html">Contact</a></li>
+        <li><a href="https://sithyd.edu.in/" target="_blank" rel="noopener">SIT Hyderabad</a></li>
       </ul>
-      <p>© Copyright ${new Date().getFullYear()} IEEE – All rights reserved. Use of this website signifies your agreement to the IEEE Terms and Conditions. A public charity, IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.</p>
+      <p>© ${new Date().getFullYear()} ${C.shortName} · Symbiosis Institute of Technology, Hyderabad. All rights reserved.</p>
     </div></div>
   </footer>
   <button class="to-top" aria-label="Back to top">${icon("arrow_upward")}</button>`;
