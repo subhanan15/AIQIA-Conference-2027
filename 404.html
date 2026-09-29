@@ -2,7 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <base href="/">
+  <script>
+    // The 404 page can be served from any URL depth, so point relative links at the site root.
+    // On GitHub Pages project sites the root is /<repo-name>/; everywhere else it is /.
+    (function () {
+      var root = "/";
+      if (/\.github\.io$/.test(location.hostname)) root = "/" + location.pathname.split("/")[1] + "/";
+      document.write('<base href="' + root + '">');
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found | AIQIA 2027</title>
   <meta name="description" content="Page Not Found — AIQIA 2027, First International Conference on Artificial Intelligence &amp; Quantum: Innovations and Applications, 24–25 September 2027, SIT Hyderabad.">
@@ -25,7 +33,7 @@
   </section>
   <section class="">
     <div class="container">
-      <div class="coming"><span class="material-icons big">travel_explore</span><h2 style="color:var(--navy)">We couldn't find that page</h2><p class="muted">It may have moved. Try the sitemap or head back home.</p><a class="btn btn-primary" href="/">Home</a> <a class="btn btn-outline" href="/sitemap">Sitemap</a></div>
+      <div class="coming"><span class="material-icons big">travel_explore</span><h2 style="color:var(--navy)">We couldn't find that page</h2><p class="muted">It may have moved. Try the sitemap or head back home.</p><a class="btn btn-primary" href="index.html">Home</a> <a class="btn btn-outline" href="sitemap.html">Sitemap</a></div>
     </div>
   </section>
 </main>
